@@ -5,9 +5,14 @@ class SearchInput extends Component {
     super(props)
   }
 
+  search = (event) => {
+    const q = event.currentTarget.value
+    this.props.searchMethod(q)
+  }
+
   render() {
     return (
-      <input type="text" className="form-control form-search"/>
+      <input type="text" className="form-control form-search" onChange={this.search}/>
     )
   }
 }
